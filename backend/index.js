@@ -61,7 +61,7 @@ const server = new ApolloServer({
 
 if(process.env.NODE_ENV!=="production"){
 app.use(express.static('./front-end/dist'))
-app.get("*",(req,res)=>{
+app.get("/kirti",(req,res)=>{
     res.sendFile(path.resolve(__dirname,'./front-end/dist/index.html'))
 })
 }
