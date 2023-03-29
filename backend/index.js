@@ -12,7 +12,7 @@ import express from 'express';
 import http from 'http';
 import path from 'path';
 const __dirname = path.resolve();
-const port = process.env.PORT || 4000
+const port = process.env.PORT || 5000
 const app = express();
 const httpServer = http.createServer(app);
 
@@ -60,9 +60,9 @@ const server = new ApolloServer({
 
 
 if(process.env.NODE_ENV!=="production"){
-app.use(express.static('../front-end/dist'))
+app.use(express.static('./front-end/dist'))
 app.get("*",(req,res)=>{
-    res.sendFile(path.resolve(__dirname,'../front-end/dist/index.html'))
+    res.sendFile(path.resolve(__dirname,'./front-end/dist/index.html'))
 })
 }
 
